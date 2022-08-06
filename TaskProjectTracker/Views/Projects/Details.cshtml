@@ -1,0 +1,83 @@
+﻿@model TaskProjectTracker.Models.Project
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Project</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.projectName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.projectName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.projectStartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.projectStartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.projectCompletionDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.projectCompletionDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.projectStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.projectStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.projectPriority)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.projectPriority)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectTasks)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>PROJECT:</th>
+                    <th>Task Name</th>
+                    <th>Task description</th>
+                    <th>Task status</th>
+                    <th>TaskPriority</th>
+                </tr>
+                @foreach (var item in Model.ProjectTasks)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Project.projectName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.taskName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.taskDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.projectTaskStatus)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.taskPriority)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.projectId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

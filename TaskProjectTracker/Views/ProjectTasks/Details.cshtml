@@ -1,0 +1,48 @@
+﻿@model TaskProjectTracker.Models.ProjectTask
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ProjectTask</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Project)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Project.projectId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.taskName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.taskName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.projectTaskStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.projectTaskStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.taskDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.taskDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.taskPriority)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.taskPriority)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.taskId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
