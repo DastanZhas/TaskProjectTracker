@@ -1,6 +1,6 @@
 # TaskProjectTracker
 Install the following packages using Package Manager Console (PowerShell):
-
+```ruby
 Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore
 Install-Package Microsoft.AspNetCore.Mvc.NewtonsoftJson
 Install-Package Microsoft.EntityFrameworkCore.Design
@@ -11,6 +11,7 @@ Install-Package Swashbuckle.AspNetCore.SwaggerUI
 Install-Package Swashbuckle.AspNetCore.SwaggerGen
 Install-Package Npgsql.EntityFrameworkCore.PostgreSQL.Design
 Install-Package Npgsql.EntityFrameworkCore.PostgreSQL
+```
 
 Make migrations using package manager console:
 add-migration "migration1"
